@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mente Regenerada — Audiobook | Oferta especial</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14082a;
+    --bg-2: #1f0e3d;
+    --panel: #281350;
+    --line: rgba(212, 175, 55, 0.35);
+    --gold: #e3b94a;
+    --gold-light: #f6d77e;
+    --gold-deep: #b98a1f;
+    --text: #f1e9ff;
+    --text-soft: #d9ccf0;
+    --radius-btn: 999px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(900px 500px at 50% -10%, #3a1a73 0%, transparent 70%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 1.05rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { width: min(100% - 2.5rem, 680px); margin-inline: auto; }
+
+  /* Faixa de topo */
+  .topbar {
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep));
+    color: #000;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  /* Hero */
+  .hero { padding: 3rem 0 2.5rem; text-align: center; animation: entrada 0.9s ease-out both; }
+
+  .kicker {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2.1rem, 6.5vw, 3.2rem);
+    line-height: 1.12;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+  }
+
+  .lead {
+    color: var(--text);
+    max-width: 52ch;
+    margin: 0 auto 2rem;
+  }
+
+  .cover {
+    position: relative;
+    width: min(78%, 340px);
+    margin: 0 auto 2.2rem;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 8% 6% 0;
+    background: radial-gradient(closest-side, rgba(227, 185, 74, 0.55), transparent 75%);
+    filter: blur(22px);
+    z-index: 0;
+  }
+  .cover img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  /* Bloco de preço */
+  .price-box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 1.8rem 1.4rem 2rem;
+    text-align: center;
+  }
+  .price-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    font-size: 0.95rem;
+  }
+  .price-old {
+    color: var(--text-soft);
+    text-decoration: line-through;
+    font-size: 1.15rem;
+    margin-top: 0.6rem;
+  }
+  .price-now {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 700;
+    color: var(--gold-light);
+    font-size: clamp(3.2rem, 14vw, 4.6rem);
+    line-height: 1;
+    margin: 0.2rem 0 0.4rem;
+  }
+  .price-note {
+    color: var(--text);
+    font-size: 0.98rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Botão */
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    margin-inline: auto;
+    padding: 1.15rem 1.5rem;
+    border-radius: var(--radius-btn);
+    background: linear-gradient(180deg, var(--gold-light), var(--gold) 55%, var(--gold-deep));
+    color: #000;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(227, 185, 74, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(227, 185, 74, 0.42); }
+  .btn:active { transform: translateY(0); }
+  .btn:focus-visible, .skip:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
+
+  .secure {
+    margin-top: 1rem;
+    color: var(--text-soft);
+    font-size: 0.92rem;
+  }
+
+  /* Seções */
+  section { padding: 3rem 0 0; }
+
+  h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+    text-align: center;
+  }
+
+  .benefits { list-style: none; display: grid; gap: 1rem; }
+  .benefits li {
+    background: var(--bg-2);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 14px 14px 0;
+    padding: 1.1rem 1.25rem;
+  }
+  .benefits strong {
+    display: block;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .text-block p + p { margin-top: 1rem; }
+  .text-block { max-width: 60ch; margin-inline: auto; }
+
+  .final {
+    padding: 3rem 0 1rem;
+    text-align: center;
+  }
+  .final .price-now { font-size: clamp(2.6rem, 11vw, 3.6rem); margin-bottom: 1.2rem; }
+
+  .skip-wrap { text-align: center; padding: 1.6rem 0 3.5rem; }
+  .skip {
+    color: var(--text-soft);
+    font-size: 0.92rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .skip:hover { color: var(--gold-light); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 1.6rem 0 2.2rem;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 0.85rem;
+  }
+
+  @keyframes entrada {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero { animation: none; }
+    .btn { transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">Espere! Sua oferta especial ainda está disponível</div>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">Mente Regenerada — Audiobook</p>
+      <h1>Ouça o Mente Regenerada no seu ritmo</h1>
+      <p class="lead">
+        Sem pressão e sem precisar de tempo livre para ler: coloque o fone e deixe a
+        recuperação da sua mente acompanhar a sua rotina.
+      </p>
+
+      <div class="cover">
+        <img src="capa-3d-mente-regenerada.jpg" alt="Capa 3D do Mente Regenerada com fone de ouvido dourado" width="680" height="680">
+      </div>
+
+      <div class="price-box">
+        <p class="price-label">Oferta especial só nesta página</p>
+        <p class="price-old">De R$ 20,00</p>
+        <p class="price-now">R$ 14,90</p>
+        <p class="price-note">Pagamento único. Acesso ao audiobook completo.</p>
+        <a class="btn" href="https://pay.kiwify.com.br/sXJTO1S">Quero o audiobook por R$ 14,90</a>
+        <p class="secure">Compra segura pela Kiwify</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2>Por que ouvir faz diferença</h2>
+        <ul class="benefits">
+          <li>
+            <strong>Ouça em qualquer lugar</strong>
+            No trânsito, na caminhada, na cozinha ou deitado antes de dormir. O conteúdo vai com você.
+          </li>
+          <li>
+            <strong>Sem esforço de leitura</strong>
+            Quando a cabeça está cansada, ler pode pesar. Ouvir permite absorver o conteúdo com mais leveza.
+          </li>
+          <li>
+            <strong>Repita quando precisar</strong>
+            Volte aos trechos que mais ajudam nos dias difíceis, quantas vezes quiser.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap text-block">
+        <h2>Para quem é este audiobook</h2>
+        <p>
+          Para quem já decidiu cuidar da própria mente, mas vive com a rotina cheia e a energia no fim.
+          Se faltou tempo ou disposição para sentar e ler, o áudio resolve isso.
+        </p>
+        <p>
+          Esta condição de R$ 14,90 aparece só aqui, nesta página. Ao sair, o valor volta a ser o normal.
+        </p>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>Garanta agora o seu audiobook</h2>
+        <p class="price-now">R$ 14,90</p>
+        <a class="btn" href="https://pay.kiwify.com.br/sXJTO1S">Quero o audiobook por R$ 14,90</a>
+        <p class="secure">Compra segura pela Kiwify</p>
+      </div>
+    </section>
+
+    <div class="skip-wrap">
+      <a class="skip" href="obrigado.html">Não, obrigado. Quero seguir sem o audiobook.</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Mente Regenerada. Todos os direitos reservados.</div>
+  </footer>
+
+</body>
+</html>
